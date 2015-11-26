@@ -3,16 +3,6 @@ module.exports = function(grunt) {
 	var pkg = grunt.file.readJSON('package.json');
 
 	grunt.initConfig({
-		
-		connect:{
-			server:{
-				options:{
-					port: 9000,
-					livereload: true
-				}
-			}
-		},
-
 		sass:{
 			dist:{
 				options:{
@@ -23,7 +13,6 @@ module.exports = function(grunt) {
 				}
 			}
 		},
-
 		autoprefixer:{
 			options:{
 				browsers: ['last 2 version', 'ie 9']
@@ -32,7 +21,6 @@ module.exports = function(grunt) {
 				src: ['public/css/main.css']
 			}
 		},
-
 		cssmin:{
 			minify:{
 				expand:true,
@@ -41,32 +29,18 @@ module.exports = function(grunt) {
 				ext:'.min.css'
 			}
 		},
-
-
 		watch:{
-			html:{
-				files: '**/*.html',
-				tasks: '',
-				options:{
-					livereload: true
-				}
-			},
 			sass:{
 				files:['public/sass/**/*.scss'],
 				tasks:['sass','autoprefixer','cssmin'],
-				options:{
-					livereload: true
-				}
 			}
 		}
 	});
-
 	var taskName;
 	for (taskName in pkg.devDependencies) {
 		if (taskName.substring(0, 6)== 'grunt-') {
 			grunt.loadNpmTasks(taskName);
 		}
 	}
-
 	grunt.registerTask('default', ['connect','watch','sass','autoprefixer','cssmin']);
 };
