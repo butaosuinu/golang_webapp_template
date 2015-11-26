@@ -1,0 +1,28 @@
+@charset "UTF-8";
+/*-----------Block Level Elements--------------*/
+*{
+	margin:0;
+	padding:0;
+}
+
+body{
+	color: #333;
+	font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,sans-serif;
+	font-size: 1em;
+	letter-spacing: 0;
+	line-height: 1.45;
+	overflow: hidden;
+}
+
+img{
+	border:none;
+	vertical-align: bottom;
+}
+@media (max-width: 880px){
+	img{
+		display: block;
+		max-width: 100%;
+		height: auto;
+		margin: 0 auto;
+	}
+}
