@@ -16,8 +16,8 @@ func LoginUser(ctx *gin.Context) {
 
 // ViewUserPage is
 func ViewUserPage(ctx *gin.Context) {
-	// userID := ctx.Param("id")
-	// view := mustache.RenderFile("view/user/ViewUserPage.html.mustache", gin.H{
-	// 	"id": userID,
-	// })
+	userID := ctx.Param("id")
+	ctx.HTML(200, "UserPage.html", gin.H{
+		"id": userID,
+	})
 }
