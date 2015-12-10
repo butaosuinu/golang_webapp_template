@@ -1,6 +1,9 @@
 package controller
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/cbroglie/mustache"
+	"github.com/gin-gonic/gin"
+)
 
 // IndexView is
 func IndexView(ctx *gin.Context) {
@@ -13,17 +16,16 @@ func IndexView(ctx *gin.Context) {
 		}
 	}()
 
-	// view, err := mustache.RenderFile("view/index.html.mustache", gin.H{
-	// 	"name":        "TEST",
-	// 	"description": "This is test.¥n The test is successful!!",
-	// })
-	// if err != nil {
-	// 	ctx.String(500, "Internal Server Error")
-	// }
-
-	ctx.HTML(200, "index.html", gin.H{
+	view, err := mustache.RenderFile("view/index.html.mustache", gin.H{
 		"name":        "TEST",
-		"description": "This is test.¥n The test is successful!!",
+		"description": "This is test. The test is successful!!",
 	})
+	if err != nil {
+		ctx.String(500, "Internal Server Error")
+	}
+
+	ctx.Header("Content-Type", "text/html; charset=UTF-8")
+
+	ctx.String(200, view)
 
 }

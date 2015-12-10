@@ -11,7 +11,6 @@ var db gorm.DB
 
 func main() {
 	router := gin.Default()
-	router.LoadHTMLGlob("view/**/*")
 
 	router.GET("/", controller.IndexView)
 	router.GET("/login", controller.LoginView)
