@@ -24,7 +24,7 @@ module.exports = function(grunt) {
 		cssmin:{
 			minify:{
 				expand:true,
-				src:['css/main.css'],
+				src:['public/css/main.css'],
 				dest:'',
 				ext:'.min.css'
 			}
@@ -42,5 +42,5 @@ module.exports = function(grunt) {
 			grunt.loadNpmTasks(taskName);
 		}
 	}
-	grunt.registerTask('default', ['connect','watch','sass','autoprefixer','cssmin']);
+	grunt.registerTask('default', ['watch','sass','autoprefixer','cssmin']);
 };
