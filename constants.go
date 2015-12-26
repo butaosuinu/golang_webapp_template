@@ -7,4 +7,7 @@ const PUBLICROOT string = "/public/"
 const BOWERCOMPONETS string = "/bower_components/"
 
 // UIKITROOT is ui kit root
-const UIKITROOT string = "/bower_conponent/uikit/css/"
+const UIKITROOT string = "/bower_conponent/uikit"
+
+// JQUERYROOT is jquery root
+const JQUERYROOT string = "/bower_components/jquery/dist"
