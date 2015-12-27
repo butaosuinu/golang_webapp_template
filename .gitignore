@@ -6,6 +6,7 @@
 .sass-cache
 *.css.map
 public/css/**
+gin-bin
 
 # IDE and editor specific files #
 #################################
