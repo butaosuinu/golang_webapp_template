@@ -5,8 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// LoginView is Rendering user lgin page
-func LoginView(ctx *gin.Context) {
+// GetLogin is Rendering user lgin page
+func GetLogin(ctx *gin.Context) {
 	// view := mustache.RenderFile("", gin.H{
 	// 	"": "",
 	// })
@@ -17,17 +17,17 @@ func LoginUser(ctx *gin.Context) {
 
 }
 
-// ViewUserPage is
-func ViewUserPage(ctx *gin.Context) {
+// GetUserPage is
+func GetUserPage(ctx *gin.Context) {
 	userID := ctx.Param("id")
 	view, err := mustache.RenderFile("view/user/Page.html.mustache", gin.H{
-		"id": userID,
+		"id":          userID,
+		"description": "このユーザは◯◯です。<br/>ああああ",
 	})
 	if err != nil {
 		ctx.String(500, "Internal Server Error")
 	}
 
 	ctx.Header("Content-Type", "text/html; charset=UTF-8")
-
 	ctx.String(200, view)
 }

@@ -5,8 +5,8 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// IndexView is
-func IndexView(ctx *gin.Context) {
+// GetIndex is
+func GetIndex(ctx *gin.Context) {
 	defer func() {
 		cause := recover()
 		if cause != nil {

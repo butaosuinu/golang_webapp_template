@@ -12,10 +12,10 @@ var db gorm.DB
 func main() {
 	router := gin.Default()
 
-	router.GET("/", controller.IndexView)
-	router.GET("/login", controller.LoginView)
+	router.GET("/", controller.GetIndex)
+	router.GET("/login", controller.GetLogin)
 	// router.POST("/login", LoginUser)
-	router.GET("/user/:id", controller.ViewUserPage)
+	router.GET("/user/:id", controller.GetUserPage)
 
 	router.GET("/ping", func(ctx *gin.Context) {
 		ctx.String(200, "pong")
