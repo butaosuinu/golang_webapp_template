@@ -18,14 +18,12 @@ func IndexView(ctx *gin.Context) {
 
 	view, err := mustache.RenderFile("view/index.html.mustache", gin.H{
 		"name":        "TEST",
-		"description": "This is test. The test is successful!!",
+		"description": "This is test.<br/> The test is successful!!",
 	})
 	if err != nil {
 		ctx.String(500, "Internal Server Error")
 	}
 
 	ctx.Header("Content-Type", "text/html; charset=UTF-8")
-
 	ctx.String(200, view)
-
 }
