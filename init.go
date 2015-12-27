@@ -23,7 +23,7 @@ func main() {
 
 	router.Static("/public", "./public")
 	router.StaticFile("/uikit.min.js", "./bower_components/uikit/js/uikit.min.js")
-	router.StaticFile("/jquery.min.js", "./bower_components/jquery/dist/jquery.min.js")
+	router.Static("/jquery", "./bower_components/jquery/dist")
 	router.Run(":8080")
 }
 
