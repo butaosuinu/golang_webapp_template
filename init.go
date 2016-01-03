@@ -1,9 +1,8 @@
 package main
 
 import (
-	"./controller"
-
 	"github.com/gin-gonic/gin"
+	_ "github.com/go-sql-driver/mysql"
 	"github.com/jinzhu/gorm"
 )
 
@@ -12,10 +11,10 @@ var db gorm.DB
 func main() {
 	router := gin.Default()
 
-	router.GET("/", controller.GetIndex)
-	router.GET("/login", controller.GetLogin)
+	router.GET("/", GetIndex)
+	router.GET("/login", GetLogin)
 	// router.POST("/login", LoginUser)
-	router.GET("/user/:id", controller.GetUserPage)
+	router.GET("/user/:id", GetUserPage)
 
 	router.GET("/ping", func(ctx *gin.Context) {
 		ctx.String(200, "pong")
@@ -28,5 +27,5 @@ func main() {
 }
 
 func init() {
-	db, _ = gorm.Open("mysql", "root@/gorm?charset=utf8&parseTime=True")
+	db, _ = gorm.Open("mysql", "root:root@/goapp?charset=utf8&parseTime=True")
 }
