@@ -2,26 +2,8 @@
 @import "../../bower_components/uikit/scss/uikit-mixins.scss";
 @import "../../bower_components/uikit/scss/uikit.scss";
 @import "../../bower_components/uikit/scss/components/autocomplete.scss";
-/*-----------Block Level Elements--------------*/
 
-body{
-	color: #333;
-	font-family: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,sans-serif;
-	font-size: 1em;
-	letter-spacing: 0;
-	line-height: 1.45;
-	overflow: hidden;
-}
+@import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
-img{
-	border:none;
-	vertical-align: bottom;
-}
-@media (max-width: 880px){
-	img{
-		display: block;
-		max-width: 100%;
-		height: auto;
-		margin: 0 auto;
-	}
-}
+@import "mystyle.scss";
+@import "index.scss";
